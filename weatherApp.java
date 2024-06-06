@@ -17,7 +17,7 @@ public class WeatherApp extends Application {
 
     // Variables for API integration
 
-    private static final String API_KEY = "d5d0f26ae0d2532359c6b737bef8de6b";
+    private static final String API_KEY = "YOUR_API_KEY HERE";
     private static final String API_URL = "https://api.openweathermap.org/data/2.5/weather";
     private static final String API_UNITS = "metric";
 
