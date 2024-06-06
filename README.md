@@ -1,5 +1,6 @@
 # Weather-App
-A Weather Information App in Java that provides real-time weather updates to users.
+The Weather Information App is a Java application that allows users to fetch and display weather data for a specific location. The app integrates with the OpenWeatherMap API to retrieve real-time weather information. This README file provided detailed instructions on how to use the app and explained the implementation details. Feel free to explore the code and make any modifications or enhancements to suit your needs. Happy weather tracking!
+
 To use the Weather Information App, follow the steps below:
 
 Clone or download the project from the GitHub repository: Weather Information App.
