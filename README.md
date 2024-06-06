@@ -3,7 +3,7 @@ The Weather Information App is a Java application that allows users to fetch and
 
 To use the Weather Information App, follow the steps below:
 
-Clone or download the project from the GitHub repository: Weather Information App.
+Clone or download the project from the GitHub repository: https://github.com/TommLawrence/Weather-App.git
 
 Open the project in your preferred Java IDE (Integrated Development Environment).
 
