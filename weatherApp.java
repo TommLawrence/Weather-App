@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import org.json.*;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -16,8 +17,6 @@ import java.net.URLConnection;
 public class WeatherApp extends Application {
 
     // Variables for API integration
-
-    private static final String API_KEY = "YOUR_API_KEY HERE";
     private static final String API_URL = "https://api.openweathermap.org/data/2.5/weather";
     private static final String API_UNITS = "metric";
 
@@ -72,7 +71,8 @@ public class WeatherApp extends Application {
         String location = locationField.getText();
 
         // Create URL for API request
-        String url = API_URL + "q=" + location + "&units=" + API_UNITS + "&appid=" + API_KEY;
+        String apiKey = readApiKeyFromFile();
+        String url = API_URL + "?q=" + location + "&units=" + API_UNITS + "&appid=" + apiKey;
 
         // Create connection to API
         URLConnection connection = new URL(url).openConnection();
@@ -83,6 +83,13 @@ public class WeatherApp extends Application {
 
         // Parse JSON response
         return new JSONObject(response);
+    }
+
+    private String readApiKeyFromFile() throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader("apikey.txt"));
+        String apiKey = reader.readLine(); // Read the first line (your API key)
+        reader.close();
+        return apiKey;
     }
 
     // Method to switch between units for temperature and wind speed
@@ -104,12 +111,10 @@ public class WeatherApp extends Application {
 
     // Method to display short-term forecast for chosen location
     private void displayForecast() {
-        // TODO: Implement method to display forecast
     }
 
     // Method to set appropriate weather icon based on conditions
     private void setWeatherIcon() {
-        // TODO: Implement method to set weather icon
     }
 
     // Method to convert temperature from Celsius to Fahrenheit
@@ -133,7 +138,6 @@ public class WeatherApp extends Application {
     }
 
     // Method to create and show the GUI
-
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Weather Information App");
 
